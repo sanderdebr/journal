@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{gCcv:function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),c=n.n(t),l=n("Bl7J"),o=n("nYfD");n("q/Tu");a.default=function(){return c.a.createElement(l.a,null,c.a.createElement(o.a,null),c.a.createElement("div",{className:"contact__header"}),c.a.createElement("div",{className:"contact__thanks"},c.a.createElement("h1",null,"Thank you! I'll be in contact soon.")))}}}]);
+//# sourceMappingURL=component---src-pages-thanks-js-51033eba6b485aa46cd5.js.map
