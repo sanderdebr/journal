@@ -3,6 +3,7 @@ require('dotenv').config({
 })
 
 module.exports = {
+  pathPrefix: "/blog",
   siteMetadata: {
     title: `Gatsby Blog Template`,
     description: `Free course on how to create a blog from scratch using React, Gatsby, Contentful, and Netlify.`,
