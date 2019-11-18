@@ -7,7 +7,10 @@ import './nav.css';
 const Nav = () => (
     <nav>
         <div className='nav__items'>
-            <a className='nav__item--left' href='/'><img src={logo} alt='Traveler Pack Logo' className='nav__item--logo'/></a>
+            <a className='nav__item--left' href='/journal'>
+                {/* <img src={logo} alt='Traveler Pack Logo' className='nav__item--logo'/> */}
+                Sander<br/>de Bruijn
+            </a>
             <Link className={window.location.href.indexOf('contact') > 0 ? 'nav__item--link active' : 'nav__item--link'}
             to='/contact'>Contact</Link>
             <Link className={window.location.href.indexOf('blog') > 0 || window.location.href.indexOf('category') > 0 ? 'nav__item--link active' : 'nav__item--link'}

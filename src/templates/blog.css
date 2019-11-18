@@ -3,7 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 460px;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     left: 50%;
     right: 50%;
@@ -27,7 +27,7 @@
 }
 
 .blog__wrapper {
-    width: 100vw;
+    width: 100%;
     background-color: #fff;
     left: 50%;
     right: 50%;
@@ -43,7 +43,7 @@
 }
 
 .blog__content p {
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 18px;
     line-height: 32px;
     font-weight: 300;
@@ -63,7 +63,7 @@
 }
 
 .blog__content blockquote p {
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 48px;
     line-height: 60px;
     font-weight: 700;

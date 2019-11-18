@@ -3,7 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 580px;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     left: 50%;
     right: 50%;
@@ -47,7 +47,7 @@
 }
 
 .archive__nav--link {
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;

@@ -65,7 +65,7 @@
     background-color: transparent;
     border-bottom: 1px solid rgba(255,255,255,0.5);
     transition: all 0.3s ease 0s;
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 14px;
     line-height: 24px;
     font-weight: 300;
@@ -77,7 +77,7 @@
 }
 
 .field label {
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 14px;
     line-height: 24px;
     font-weight: 700;

@@ -7,7 +7,7 @@
 }
 
 .card__category {
-    font-family: Muli,sans-serif;
+    font-family: 'Karla' ,sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 700;
@@ -16,7 +16,7 @@
 }
 
 .card__title {
-    font-family: Baskerville,serif;
+    font-family: Rubik,serif;
     font-size: 24px;
     line-height: 28px;
     font-weight: 400;

@@ -3,11 +3,11 @@ require('dotenv').config({
 })
 
 module.exports = {
-  pathPrefix: "/blog",
+  pathPrefix: "/journal",
   siteMetadata: {
-    title: `Gatsby Blog Template`,
-    description: `Free course on how to create a blog from scratch using React, Gatsby, Contentful, and Netlify.`,
-    author: `Skillthrive`,
+    title: `Sander de Bruijn - My Journal`,
+    description: `This journal is made with React, Gatsby, Contentful, and Netlify.`,
+    author: `Sander de Bruijn`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,8 +23,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `baskerville\:400`,
-          `muli\:300,700`
+          `rubik\:300,400,500,600`,
+          `karla\:400,700`,
         ]
       },
     },
