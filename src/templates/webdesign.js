@@ -1,39 +1,26 @@
 import React from 'react';
 import { Link, graphql, navigate } from 'gatsby';
-import { window } from 'browser-monads';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import HeaderNav from '../components/HeaderNav';
 import SEO from '../components/seo';
 import '../components/home/home.css';
 import './archive.css';
 
-import headerImg from '../images/general-header-image.jpg';
-
-const Archive = (props) => {
+const Webdesign = (props) => {
 
     const blogContent = props.data.allContentfulBlog
     const { currentPage, numPages } = props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? '/blog' : `/blog/${currentPage - 1}`
-    const nextPage = `/blog/${currentPage + 1}`
+    const prevPage = currentPage - 1 === 1 ? '/category/webdesign' : `/category/webdesign/${currentPage - 1}`
+    const nextPage = `/category/webdesign/${currentPage + 1}`
 
     return (
         <Layout>
         <SEO title='Blog' keywords={['travel', 'travel blog', 'travel photography']} />
         <Nav />
-
-        <header>
-            <div className='archive__section'>
-                <div className='archive__hero' style={{backgroundImage: `url(${headerImg})`}}></div>
-                <div className='archive__nav'>
-                    <Link to='/blog' className={window.location.href.indexOf('/blog') > 0 ? 'archive__nav--link selected' : 'archive__nav--link'}>All</Link>
-                    <Link to='/category/javascript' className={window.location.href.indexOf('category/javascript') > 0 ? 'archive__nav--link selected' : 'archive__nav--link'}>Javascript</Link>
-                    <Link to='/category/css' className={window.location.href.indexOf('category/css') > 0 ? 'archive__nav--link selected' : 'archive__nav--link'}>CSS</Link>
-                    <Link to='/category/webdesign' className={window.location.href.indexOf('category/webdesign') > 0 ? 'archive__nav--link selected' : 'archive__nav--link'}>Webdesign</Link>
-                </div>
-            </div>
-        </header>
+        <HeaderNav />
 
         <div className='feed'>
             {blogContent.edges.map(edge => (
@@ -77,14 +64,16 @@ const Archive = (props) => {
     )
 }
 
-export default Archive
+export default Webdesign
 
 export const pageQuery = graphql` 
- query ArchiveQuery ($skip: Int!, $limit: Int!) {
+ query WebdesignQuery ($skip: Int!, $limit: Int!) {
    allContentfulBlog(
        sort: { fields: [createdAt], order: DESC }
        filter: {
-       node_locale: {eq: "en-US",}}
+       node_locale: {eq: "en-US",}
+       category: {elemMatch: {title: {eq: "Webdesign"}}}
+    }
        skip: $skip
        limit: $limit
      ) {

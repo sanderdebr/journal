@@ -154,14 +154,14 @@ const getGuide = makeRequest(graphql, `
   })
 });
 
-// Create opinion category page, including pagination
-const getOpinion = makeRequest(graphql, `
+// Create webdesign category page, including pagination
+const getWebdesign = makeRequest(graphql, `
 {
   allContentfulBlog (
     sort: { fields: [createdAt], order: DESC }
     filter: {
       node_locale: {eq: "en-US"}
-      category: {elemMatch: {title: {eq: "Opinion"}}}
+      category: {elemMatch: {title: {eq: "Webdesign"}}}
     },)
   {
     edges {
@@ -179,8 +179,8 @@ const getOpinion = makeRequest(graphql, `
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/category/opinion` : `/category/opinion/${i + 1}`,
-      component: path.resolve("./src/templates/opinion.js"),
+      path: i === 0 ? `/category/webdesign` : `/category/webdesign/${i + 1}`,
+      component: path.resolve("./src/templates/webdesign.js"),
       context: {
         limit: blogsPerPage,
         skip: i * blogsPerPage,
@@ -191,14 +191,14 @@ const getOpinion = makeRequest(graphql, `
   })
 });
 
-// Create tech category page, including pagination
-const getTech = makeRequest(graphql, `
+// Create CSS category page, including pagination
+const getCSS = makeRequest(graphql, `
 {
   allContentfulBlog (
     sort: { fields: [createdAt], order: DESC }
     filter: {
       node_locale: {eq: "en-US"}
-      category: {elemMatch: {title: {eq: "Tech"}}}
+      category: {elemMatch: {title: {eq: "CSS"}}}
     },)
   {
     edges {
@@ -216,8 +216,45 @@ const getTech = makeRequest(graphql, `
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/category/tech` : `/category/tech/${i + 1}`,
-      component: path.resolve("./src/templates/tech.js"),
+      path: i === 0 ? `/category/css` : `/category/css/${i + 1}`,
+      component: path.resolve("./src/templates/css.js"),
+      context: {
+        limit: blogsPerPage,
+        skip: i * blogsPerPage,
+        numPages,
+        currentPage: i + 1
+      },
+    }) 
+  })
+});
+
+// Create Javascript category page, including pagination
+const getJavascript = makeRequest(graphql, `
+{
+  allContentfulBlog (
+    sort: { fields: [createdAt], order: DESC }
+    filter: {
+      node_locale: {eq: "en-US"}
+      category: {elemMatch: {title: {eq: "Javascript"}}}
+    },)
+  {
+    edges {
+      node {
+        id
+        slug
+      }
+    }
+  }
+}
+`).then(result => {
+  const blogs = result.data.allContentfulBlog.edges
+  const blogsPerPage = 9
+  const numPages = Math.ceil(blogs.length / blogsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/category/javascript` : `/category/javascript/${i + 1}`,
+      component: path.resolve("./src/templates/javascript.js"),
       context: {
         limit: blogsPerPage,
         skip: i * blogsPerPage,
@@ -233,7 +270,8 @@ const getTech = makeRequest(graphql, `
    getArchive,
    getTravel,
    getGuide,
-   getOpinion,
-   getTech
+   getWebdesign,
+   getCSS,
+   getJavascript,
   ])
 };
