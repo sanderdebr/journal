@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { window } from 'browser-monads';
 import headerImg from '../../images/general-header-image.jpg';
 
 const HeaderNav = () => {
